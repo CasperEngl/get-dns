@@ -1,6 +1,11 @@
 import fs from 'fs-extra';
 import prompts from 'prompts';
-import ProgressBar from 'progress';
+import * as dns from 'native-dns';
+
+const question = dns.Question({
+  name: 'www.google.com',
+  type: 'A',
+});
 
 (async () => {
   const questions = [
@@ -26,8 +31,6 @@ import ProgressBar from 'progress';
   ];
 
   const response = await prompts((questions as any));
-
-  console.log(response); // => { value: 24 }
 
   // const bar = new ProgressBar('[:bar] :percent :eta seconds remaining', {
   //   total: 100,

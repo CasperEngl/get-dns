@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "tsc src"
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
